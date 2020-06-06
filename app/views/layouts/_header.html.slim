@@ -1,4 +1,26 @@
 nav.navbar.navbar-fixed-top.navbar-expand-lg.navbar-light.bg-light
-  = link_to root_path do
-    #brand-log.navbar-brand
-      | make notes
+  .container
+    #brand-logo
+      = link_to root_path do
+        h3  make notes
+
+    .navbar-right
+      ul.navbar-nav.mr-auto
+        - unless user_signed_in?
+          li.nav-item
+            = link_to 'ログイン', new_user_session_path, class: "nav-link"
+
+          li.nav-item
+            = link_to '新規登録', new_user_registration_path, class: "nav-link"
+
+        - else
+          li.nav-item
+            = link_to 'ユーザーを探す', "#", class: "nav-link"
+
+          li.nav-item
+            = link_to '記事を探す', "#", class: "nav-link"
+
+          li.nav-item
+            = link_to 'マイページ', "#", class: "nav-link"
+
+
