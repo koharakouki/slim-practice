@@ -1,0 +1,18 @@
+.container.text-center
+  h2.mt-4.mb-3
+    | 記事作成
+
+  = form_for @article do |f|
+    .form-group.row
+      = f.label :article_title, '記事タイトル', class: "col-md-3"
+
+      = f.text_field :article_title, class: "form-control col-md-7"
+
+    .form-group.row
+      = f.label :content, '内容', class: "col-md-3"
+
+      = f.text_area :content, class: "form-control col-md-7", size: "100x15"
+
+    .text-right
+	    = f.submit '投稿する', class: 'btn btn-primary'
+
