@@ -8,4 +8,6 @@ devise_for :users, controllers: {
 
 root to: 'home#top'
 
+resources :articles
+
 end
